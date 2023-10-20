@@ -74,7 +74,6 @@ char	*ft_get_line(char *line, char *left_str, int *bytes_read, int fd)
 			ft_bzero(left_str, BUFFER_SIZE + 1);
 			break ;
 		}
-		
 	}
 	return (line);
 }

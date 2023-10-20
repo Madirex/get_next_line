@@ -6,22 +6,11 @@
 /*   By: anmateo- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/20 12:31:27 by anmateo-          #+#    #+#             */
-/*   Updated: 2023/10/20 12:54:39 by anmateo-         ###   ########.fr       */
+/*   Updated: 2023/10/20 14:42:39 by anmateo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
-
-static int	string_length(char *str)
-{
-	int	count;
-
-	count = 0;
-	while (*(str + count))
-		count++;
-	return (count);
-}
-
 
 size_t	ft_strlen(const char *str)
 {
@@ -29,26 +18,28 @@ size_t	ft_strlen(const char *str)
 
 	c = 0;
 	while (str[c] != '\0')
-	{
 		c++;
-	}
 	return (c);
 }
 
 size_t	ft_strlcpy(char *dest, char *src, size_t size)
 {
 	size_t	count;
+	int		str_len;
 
 	count = 0;
+	str_len = 0;
+	while (*(src + str_len))
+		str_len++;
 	if (size == 0)
-		return (string_length(src));
+		return (str_len);
 	while (count < size - 1 && *(src + count))
 	{
 		*(dest + count) = *(src + count);
 		count++;
 	}
 	*(dest + count) = '\0';
-	return (string_length(src));
+	return (str_len);
 }
 
 void	*ft_memcpy(void *dst, const void *src, size_t n)
@@ -86,9 +77,9 @@ void	ft_bzero(void *s, size_t n)
 
 char	*ft_strjoin_reader(char *s1, char *s2, int *reader)
 {
-	char			*result;
-	size_t			size1;
-	size_t			size2;
+	char	*result;
+	size_t	size1;
+	size_t	size2;
 
 	if (!s1 || !s2)
 		return (NULL);
@@ -107,4 +98,3 @@ char	*ft_strjoin_reader(char *s1, char *s2, int *reader)
 		*reader = 0;
 	return (result);
 }
-
