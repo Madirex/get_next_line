@@ -67,7 +67,7 @@ char	*ft_get_line(char *line, char *left_str, int *bytes_read, int fd)
 		}
 		len = ft_get_line_length(buffer);
 		ft_strlcpy(left_str, &buffer[len], (BUFFER_SIZE + 1));
-		buffer[BUFFER_SIZE] = '\0';
+		buffer[len] = '\0';
 		line = ft_strjoin_reader(line, buffer, bytes_read);
 		if (read_res == 0)
 		{
