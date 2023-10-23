@@ -40,9 +40,9 @@ size_t	ft_get_line_length(char *line)
 	i = 0;
 	if (!line)
 		return (0);
-	while (i < BUFFER_SIZE)
+	while (line[i])
 	{
-		if (line[i] == '\n' || line[i] == '\0')
+		if (line[i] == '\n')
 			return (i + 1);
 		i++;
 	}
