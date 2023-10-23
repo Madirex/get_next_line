@@ -15,7 +15,7 @@
 # ifndef BUFFER_SIZE
 #  define BUFFER_SIZE 512
 # endif
-# if BUFFER_SIZE > 125000 || BUFFER_SIZE < 1
+# if BUFFER_SIZE > 131072 || BUFFER_SIZE < 1
 #  undef BUFFER_SIZE
 #  define BUFFER_SIZE 512
 # endif
