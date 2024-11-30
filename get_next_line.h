@@ -29,7 +29,7 @@ char	*ft_get_line(char *line, char *left_str, int *bytes_read, int fd);
 char	*get_next_line(int fd);
 
 size_t	ft_strlen(const char *str);
-size_t	ft_strlcpy(char *dest, char *src, size_t size);
+size_t	ft_strlcpy_nl(char *dest, char *src, size_t size);
 void	*ft_memcpy(void *dst, const void *src, size_t n);
 void	ft_bzero(void *s, size_t n);
 char	*ft_strjoin_reader(char *s1, char *s2, int *reader);
