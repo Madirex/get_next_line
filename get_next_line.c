@@ -66,7 +66,7 @@ char	*ft_get_line(char *line, char *left_str, int *bytes_read, int fd)
 			return (NULL);
 		}
 		len = ft_get_line_length(buffer);
-		ft_strlcpy(left_str, &buffer[len], (BUFFER_SIZE + 1));
+		ft_strlcpy_nl(left_str, &buffer[len], (BUFFER_SIZE + 1));
 		buffer[len] = '\0';
 		line = ft_strjoin_reader(line, buffer, bytes_read);
 		if (read_res == 0)
@@ -90,7 +90,7 @@ char	*get_next_line(int fd)
 	line = ft_init_line(left_str, &bytes_read);
 	if (!line)
 		return (NULL);
-	ft_strlcpy(left_str, &left_str[bytes_read + 1], BUFFER_SIZE + 1);
+	ft_strlcpy_nl(left_str, &left_str[bytes_read + 1], BUFFER_SIZE + 1);
 	line = ft_get_line(line, left_str, &bytes_read, fd);
 	if (!line || line[0] == '\0')
 	{
